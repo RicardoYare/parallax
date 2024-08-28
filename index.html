@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+
+            height: 99vh;
+            width: 100vw;
+
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+
+
+
+        }
+
+        #square {
+
+            width: 101%;
+            height: 101%;
+
+
+        }
+
+
+        img {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #uno {
+            top: 100px;
+            z-index: 7;
+        }
+
+        #dos {
+            top: 70px;
+            z-index: 6;
+        }
+
+        #tres {
+            top: 55px;
+            z-index: 5;
+        }
+
+        #cuatro {
+            top: 70px;
+            z-index: 4;
+        }
+
+        #cinco {
+            top: 50px;
+            z-index: 3;
+        }
+
+        #seis {
+            top: 40px;
+            z-index: 2;
+        }
+
+        #siete {
+
+            z-index: 0;
+            height: 120%;
+        }
+
+        #sol {
+
+            z-index: 1;
+            background-image: url("sol.png");
+            background-repeat: no-repeat;
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #back {
+
+            
+            top: 800px;
+
+            width: 100%;
+            height: 1200px;
+            background-color: #1D0F2F;
+
+            position: absolute;
+            z-index: 10;
+        }
+
+
+        #noche {
+
+            top: 25%;
+           
+            width: 100%;
+            height: 75%;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        #nuno {
+
+            z-index: 6;
+            top: -1000px;
+
+            /* final 100px */
+
+        }
+
+        #ndos {
+
+            z-index: 5;
+            top: -500px;
+
+
+        }
+
+        #ntres {
+
+            z-index: 4;
+            top: -200px;
+
+        }
+
+        #ncuatro {
+
+            z-index: 3;
+            top: 450px;
+
+        }
+
+        #ncinco {
+
+            z-index: 2;
+            top: 700px;
+
+        }
+
+        #nseis {
+
+            z-index: 1;
+            top: 1100px;
+        }
+
+        #nback {
+            top: 500px;
+
+            width: 100%;
+            height: 100%;
+            background-color: #1D0F2F;
+
+            position: absolute;
+            z-index: 11;
+        }
+
+
+        #luna {
+
+            z-index: 1;
+            top: 1050px;
+
+            background-image: url("sol.png");
+            background-repeat: no-repeat;
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="square">
+        <img src="cap1.png" id="uno">
+        <img src="cap2.png" id="dos">
+        <img src="cap3.png" id="tres">
+        <img src="cap4.png" id="cuatro">
+        <img src="cap5.png" id="cinco">
+        <img src="cap6.png" id="seis">
+        <img src="cap7.png" id="siete"> <!-- Cielo -->
+        <div id="sol"></div>
+        <div id="back">
+            <div id="noche">
+
+                <img src="cap1.png" id="nuno">
+                <img src="cap2.png" id="ndos">
+                <img src="cap3.png" id="ntres">
+                <img src="cap4.png" id="ncuatro">
+                <img src="cap5.png" id="ncinco">
+                <img src="cap6.png" id="nseis">
+                <div id="nback"></div>
+                <div id="luna"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let uno = document.getElementById("uno");
+        let dos = document.getElementById("dos");
+        let tres = document.getElementById("tres");
+        let cuatro = document.getElementById("cuatro");
+        let cinco = document.getElementById("cinco");
+        let seis = document.getElementById("seis");
+        let siete = document.getElementById("siete");
+
+        let sol = document.getElementById("sol");
+        let back = document.getElementById("back");
+
+        let nuno = document.getElementById("nuno");
+        let ndos = document.getElementById("ndos");
+        let ntres = document.getElementById("ntres");
+        let ncuatro = document.getElementById("ncuatro");
+        let ncinco = document.getElementById("ncinco");
+        let nseis = document.getElementById("nseis");
+        let nback = document.getElementById("nback");
+
+        let luna = document.getElementById("luna");
+
+        addEventListener('scroll', (e) => {
+
+            if (window.scrollY <= 800) {
+
+                uno.style.top = (100 + 0.1 * window.scrollY) + "px";
+                dos.style.top = (70 + 0.3 * window.scrollY) + "px";
+                tres.style.top = (55 + 0.5 * window.scrollY) + "px";
+                cuatro.style.top = (70 + 0.7 * window.scrollY) + "px";
+                cinco.style.top = (50 + 0.9 * window.scrollY) + "px";
+                seis.style.top = (40 + 1.1 * window.scrollY) + "px";
+
+                sol.style.backgroundPositionX = (-2) * window.scrollY + "px";
+                sol.style.top = (1.3 * window.scrollY) + "px";
+
+            }
+
+            nuno.style.top = (-1000 + window.scrollY * 0.9) + "px";
+            nback.style.top = (500 + window.scrollY * 0.5) + "px";
+
+            ndos.style.top = (-500 + window.scrollY * 0.5) + "px";
+            ntres.style.top = (-200 + window.scrollY * 0.25) + "px";
+            ncuatro.style.top = (450 - window.scrollY * 0.3) + "px";
+            ncinco.style.top = (700 - window.scrollY * 0.5) + "px";
+
+            nseis.style.top = (1100 - window.scrollY * 0.8) + "px";
+
+            luna.style.top = (1050 - window.scrollY * 0.9) + "px";
+            luna.style.backgroundPositionX = (1200 - window.scrollY * 1.5) + "px";           
+            
+        })
+
+
+    </script>
+</body>
+
+</html>
